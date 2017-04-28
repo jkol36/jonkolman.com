@@ -2,7 +2,10 @@ import express from 'express'
 import path from 'path'
 import bodyParser from 'body-parser'
 import cookieParser from 'cookie-parser'
-import firebase from 'firebase'
+import {
+  bovadaBotFirebase,
+ personalSiteFirebase
+} from './config'
 
 export const app = express()
 
@@ -19,11 +22,31 @@ app.use(bodyParser.json());
 
 
 app.get('/', function(req, res){
-    firebase.database().ref('personalSite').child('LandingPageViews').transaction(currentVal => currentVal + 1, () => {
-      console.log('done')
+    personalSiteFirebase.database().ref('personalSite').child('LandingPageViews').transaction(currentVal => currentVal + 1, () => {
     })
     res.render('index.html');
 });
+
+app.get('/bovadabot', (req, res) => {
+  bovadaBotFirebase
+    .database()
+    .ref('profiles')
+    .child('101412113')
+    .once('value', s => {
+      let data = {}
+      if(s.exists()) {
+        Object.keys(s.val()).map(k => {
+          if(k !== 'openBets' && k !== 'closedbets') {
+            data[k] = s.val()[k]
+          }
+        })
+        return res.render('bovadabot.html', {data})
+      }
+      else {
+        return res.render('bovadabot.html', {data: 'not found'})
+      }
+    })
+})
 
 
 

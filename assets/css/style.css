@@ -27,6 +27,11 @@ a {
     color: #66cc99;
     text-decoration: none;
 }
+div.active {
+    text-align:center;
+    font-size: 20px;
+    padding: 5px;
+}
 .clearfix::after,
 .clearfix::before {
     content: " ";

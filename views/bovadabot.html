@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <link rel="shortcut icon" href="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-9/17022364_10154447264686448_2992362732491885794_n.jpg?oh=04780cb2f44bd854298fe5595ebab86d&oe=595961F5" type="image/x-icon">
+      <title>Bovada Bot - performance</title>
+      <link rel="stylesheet" href="assets/css/style.css">
+  </head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <div class='stat-container'>
+      <% Object.keys(data).forEach(function(key) { %>
+        <div class='active'> <a> <%= key %>: <%- JSON.stringify(data[key]) %></a> </div>
+    <% }); %>
+      
+    </div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+  <script src='assets/js/helpers.js'></script>
+</html>
