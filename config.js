@@ -15,5 +15,6 @@ const bovadaBotConfig = {
   storageBucket: "bovadabot.appspot.com"
 }
 
+
 export const personalSiteFirebase = firebase.initializeApp(personalSiteConfig, 'personalsite')
 export const bovadaBotFirebase = firebase.initializeApp(bovadaBotConfig, 'bovadabot')
