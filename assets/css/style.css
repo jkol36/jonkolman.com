@@ -483,3 +483,7 @@ div.active {
 #navbar li.active:before {
     background: steelblue;
 }
+
+.stat-container {
+    text-align:center;
+}
