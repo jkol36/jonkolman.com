@@ -92,6 +92,27 @@ app
   })
 })
 
+app
+.get('/curlybot', (req, res) => {
+  bovadaBotFirebase
+  .database()
+  .ref('profiles')
+  .child('10232765')
+  .once('value', s => {
+    let data = {}
+    if(s.exists()) {
+      Object.keys(s.val()).map(k => {
+        if(k !== 'openBets' && k !== 'closedbets') {
+            data[k] = s.val()[k]
+        }
+      })
+      return res.render('bovadabot.html', {data})
+    }
+    else {
+      return res.render('bovadabot.html', {data: 'not found'})
+    }
+  })
+})
 
 
 
