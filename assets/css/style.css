@@ -77,7 +77,8 @@ div.active {
     text-transform: uppercase;
     line-height: 1em;
     padding-top: 40px;
-}
+    padding-left:30px;
+  }
 @media (max-width: 1200px) {
     .profile h1 {
         padding-top: 20px;
@@ -88,9 +89,6 @@ div.active {
         font-size: 1.8em;
         padding-top: 20px;
     }
-}
-.profile li {
-    margin-bottom: 10px;
 }
 .profile .picture-resume-wrapper {
     width: 40%;
@@ -121,17 +119,19 @@ div.active {
     text-align: center;
 }
 .profile .picture-resume img {
+    margin-top: 18%;
     border-radius: 50%;
-    width: 130px;
+    width: 90px;
 }
 @media (max-width: 1500px) {
     .profile .picture-resume img {
-        width: 80px;
+        width: auto;
+        height: 10%;
     }
 }
 @media (max-width: 1200px) {
     .profile .picture-resume img {
-        width: 120px;
+        width: auto;
         height: 120px;
     }
 }
@@ -204,10 +204,7 @@ div.active {
     top: 0;
     left: 0;
 }
-.profile .st0,
-.profile .st1 {
-    fill: #66cc99;
-}
+
 .experience {
     background: #3d3e42;
     width: 60%;
